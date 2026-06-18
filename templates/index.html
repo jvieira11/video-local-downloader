@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Downloader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M19 9l-7 4-7-4V7l7 4 7-4v2zm0-4H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2z"/></svg>
+    </div>
+    <h1>YT Downloader</h1>
+  </div>
+  <p class="subtitle">Cole o link, escolha a qualidade, baixe.</p>
+</header>
+
+<div class="card">
+  <div class="input-group">
+    <div class="input-wrap">
+      <input
+        type="text"
+        id="url-input"
+        placeholder="Cole o link do YouTube aqui..."
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      />
+    </div>
+    <button class="btn-primary" id="fetch-btn" onclick="fetchInfo()">Buscar</button>
+  </div>
+
+  <div class="error-msg" id="error-msg"></div>
+  <div class="spinner" id="spinner"></div>
+
+  <div id="video-info">
+    <div class="video-meta">
+      <img class="thumb" id="thumb" src="" alt="thumbnail" />
+      <div class="video-text">
+        <div class="video-title" id="video-title"></div>
+        <div class="video-details" id="video-details"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Vídeo (MP4)</div>
+    <div class="formats-grid" id="video-formats"></div>
+
+    <div class="section-label" style="margin-top:4px">Áudio</div>
+    <div class="formats-grid">
+      <button class="fmt-btn mp3" onclick="selectFormat('mp3', this)">🎵 MP3 – 192kbps</button>
+    </div>
+
+    <button class="btn-primary" id="download-btn" onclick="startDownload()" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z"/>
+      </svg>
+      Baixar
+    </button>
+
+    <div class="progress-wrap" id="progress-wrap">
+      <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+      <div class="progress-label" id="progress-label">Preparando download…</div>
+    </div>
+  </div>
+</div>
+
+<footer>Apenas para uso pessoal · Respeite os termos de serviço do YouTube</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
