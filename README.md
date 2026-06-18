@@ -81,10 +81,3 @@ ytdl/
 └── templates/
     └── index.html
 ```
-
----
-
-## Observacao
-
-Use apenas para conteudo que voce tem permissao de baixar.  
-Respeite os termos de servico do YouTube.
