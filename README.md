@@ -1,6 +1,6 @@
 # Video Downloader
 
-Downloader de vídeos do com interface web responsiva.  
+Downloader de vídeos com interface web responsiva, feito em Flask e baseado no yt-dlp.  
 Funciona no computador e no celular (mesma rede Wi-Fi).
 
 ---
